@@ -1,0 +1,26 @@
+:root {
+    --dark: #222222;
+    --light: #fff0f5;
+    --favorite: #aa8fb5;
+    --hf: #ffdae2;
+    --hfdark: #31292b;
+    --hoverbg: #eb4e56;
+    --sky: #ffbb8a;
+    --favdark: #d1afde;
+    --card-border: 15px;
+    --card-border-radius: 40px;
+    --tile-border: 35px;
+    --textbox-width: 75%;
+}
+
+#current-weather {
+    p {
+        font-size: 14px !important;
+    }
+}
+
+#forecast {
+    p {
+        font-size: 14px !important;
+    }
+}

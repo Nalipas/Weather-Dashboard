@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- Module-6-Challenge\Weather-Dashboard\index.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="./assets/css/jass.css" />
+        <link 
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+            rel="stylesheet" 
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+            crossorigin="anonymous">
+        <link rel="stylesheet" href="./assets/css/styles.css" />
+        <link rel="icon" type="image/x-icon" href="https://cdn3.emoji.gg/emojis/7122-happy-pepe.png" />
+        <title>Weather Dashboard</title>
+    </head>
+    <body>
+        <header class="container-fluid header col-12 text-center text-white bg-dark p-2 border-bottom border-dark">
+            <h1>WEATHER DASHBOARD</h1>
+            <hr>
+            <h5>Today is: <span id="current-day"></span> <span id="current-time"></span></h5>
+            <hr>
+            <p style="font-size: 14px">Search for a city to get the current weather and 5-day forecast.</p>
+        </header>
+
+        <div class="container-fluid" style="max-width: 80%">
+            <div class="row">
+                <aside class="col-4 text-center pb-3">
+                <h3 id="search-header" class="mt-3 h3 form-label">Search for a city:</h3> 
+                <form id="search-form" class="form">
+                    <div class="form-group form-inline">
+                        <div class="input-group-append">
+                            <input class="form-input city-search" type="text" id="search-input" placeholder="Enter a city" />
+                            <button type="submit" class="btn search-btn" id="search-btn">Search</button>
+                            <hr class="hr weather-hr" />
+                        </div>
+                    </div>
+                </form>
+                <div class="list-group" id="search-history"></div>
+                </aside>
+            <div class="col-8 pb-3">
+                <section id="current-weather" class="mt-3" role="region"></section>
+                <section id="forecast" class="mt-3" role="region"></section>
+            </div>
+        </div>
+        <!-- Day.js -->
+        <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
+        <!-- Bootstrap-->
+        <script 
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+            crossorigin="anonymous">
+        </script>
+        <!-- jQuery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="./assets/js/script.js"></script>
+    </body>
+</html>
+
+        
