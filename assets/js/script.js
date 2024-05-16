@@ -19,11 +19,13 @@ const currentDay = dayjs();
 
 // Functions
 
+// Sets the time and date
 function setTimeAndDate() {
     dayElement.text(currentDay.format('dddd, MMMM D'));
     timeElement.text(currentDay.format('h:mm A'));
 }
 
+// Gets the weather
 function getWeather() {
     searchURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
     fetch(searchURL)
@@ -35,6 +37,7 @@ function getWeather() {
     });
 }
 
+// Displays the current weather
 function displayCurrentWeather(data) {
     $("#current-weather").empty();
 
@@ -62,6 +65,7 @@ function displayCurrentWeather(data) {
     todaysWeather.append(currentWeatherHeader, weatherIconElement, temperatureElement, humidityElement, windSpeedElement, weatherDescriptionElement);
 }
 
+// Gets the forecast
 function getForecast() {
     forecastQueryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}`;
     fetch(forecastQueryURL)
@@ -73,6 +77,7 @@ function getForecast() {
         });
 }
 
+// Displays the forecast
 function displayForecast(data) {
     $("#forecast").empty();
     const headerForecast = $("<h5 class='text-center py-3'>").text("5-Day Forecast");
@@ -104,6 +109,7 @@ function displayForecast(data) {
     $("#forecast").append(forecast);
 }  
 
+// Displays the search history
 function displaySearchHistory() {
     const history = JSON.parse(localStorage.getItem("cities")) || [];
     $("#search-history").empty();
@@ -128,6 +134,7 @@ function displaySearchHistory() {
     }
 }
 
+// Event listener for the search button
 $("#search-form").on("submit", function(event) {
     event.preventDefault();
     city = $("#search-input").val();
@@ -147,6 +154,7 @@ $("#search-form").on("submit", function(event) {
     }
 });
 
+// Event listener for the search history buttons
 $("#search-history").on("click", function(event) {
     event.preventDefault();
     city = $(event.target).text();
